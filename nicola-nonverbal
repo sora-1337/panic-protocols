@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dissoziative Unterstützung</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .keyword-button {
+            flex: 1;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;j
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .keyword-button:hover {
+            background-color: #0056b3;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dissoziative Unterstützung</h1>
+        <div class="button-container">
+            <button class="keyword-button" onclick="addKeyword('Angst')">Angst</button>
+            <button class="keyword-button" onclick="addKeyword('Verwirrung')">Verwirrung</button>
+            <button class="keyword-button" onclick="addKeyword('Sicherheit')">Sicherheit</button>
+            <button class="keyword-button" onclick="addKeyword('Unterstützung')">Unterstützung</button>
+            <button class="keyword-button" onclick="addKeyword('Beruhigung')">Beruhigung</button>
+            <button class="keyword-button" onclick="addKeyword('Pause')">Pause</button>
+        </div>
+        <textarea id="textInput" placeholder="Schreibe hier..."></textarea>
+    </div>
+    <script>
+        function addKeyword(keyword) {
+            const textInput = document.getElementById('textInput');
+            textInput.value += keyword + ' ';
+            textInput.focus();
+        }
+    </script>
+</body>
+</html>
