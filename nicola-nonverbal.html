@@ -3,62 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dissoziative Unterstützung</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
+            height: 100%;
             margin: 0;
             padding: 20px;
+            color: #000; /* Textfarbe schwarz */
         }
+
+        h1 {
+            font-size: 22px
+        }
+
+        h2 {
+            font-size: 18px
+        }
+
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: auto;
             background: #fff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
+
+        .button-group {
+            margin-bottom: 20px;
+        }
+
+        .button-group h2 {
+            margin-bottom: 10px;
+            color: #000; /* Textfarbe schwarz */
+        }
+
         .button-container {
+            flex: 1;
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+            overflow-y: auto; /* Scrollbar bei Bedarf */
         }
+
         .keyword-button {
-            flex: 1;
-            padding: 10px;
-            background-color: #007BFF;
-            color: #fff;j
+            padding: 16px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             text-align: center;
+            color: #fff; /* Standard Textfarbe weiß */
+            font-size: 18px;
         }
+
         .keyword-button:hover {
-            background-color: #0056b3;
+            opacity: 0.8;
         }
+
+        /* Anpassung der Textfarbe basierend auf der Hintergrundfarbe */
+        .keyword-button.green {
+            background-color: #28a745;
+            color: #02350f; /* Weißer Text auf grünem Hintergrund */
+        }
+
+        .keyword-button.red {
+            background-color: #dc3545;
+            color: #2b0202; /* Weißer Text auf rotem Hintergrund */
+        }
+
+        .keyword-button.yellow {
+            background-color: #ffc107;
+            color: #000; /* Schwarzer Text auf gelbem Hintergrund */
+        }
+
+        .keyword-button.purple {
+            background-color: #6f42c1;
+            color: #270553; /* Weißer Text auf lila Hintergrund */
+        }
+
+        .keyword-button.orange {
+            background-color: #fd7e14;
+            color: #000000; /* Weißer Text auf orangem Hintergrund */
+        }
+
+        .keyword-button.blue {
+            background-color: #007bff;
+            color: #000a44; /* Weißer Text auf blauem Hintergrund */
+        }
+
         textarea {
-            width: 100%;
+            width: 95%;
             height: 150px;
             margin-top: 20px;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            font-size: 16px;
+            font-size: 20px;
             resize: vertical;
+            color: #000; /* Textfarbe schwarz */
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Dissoziative Unterstützung</h1>
-        <div class="button-container">
-            <button class="keyword-button" onclick="addKeyword('Angst')">Angst</button>
-            <button class="keyword-button" onclick="addKeyword('Verwirrung')">Verwirrung</button>
-            <button class="keyword-button" onclick="addKeyword('Sicherheit')">Sicherheit</button>
-            <button class="keyword-button" onclick="addKeyword('Unterstützung')">Unterstützung</button>
-            <button class="keyword-button" onclick="addKeyword('Beruhigung')">Beruhigung</button>
-            <button class="keyword-button" onclick="addKeyword('Pause')">Pause</button>
+
+        <div class="button-group">
+            <h2>Positive Wörter</h2>
+            <div class="button-container">
+                <button class="keyword-button green" onclick="addKeyword('glücklich')">glücklich</button>
+                <button class="keyword-button green" onclick="addKeyword('sicherheit')">sicherheit</button>
+                <button class="keyword-button green" onclick="addKeyword('beruhigung')">beruhigung</button>
+                <button class="keyword-button green" onclick="addKeyword('ruhe')">ruhe</button>
+                <button class="keyword-button green" onclick="addKeyword('entspannt')">entspannt</button>
+                <button class="keyword-button green" onclick="addKeyword('wasser')">wasser</button>
+                <button class="keyword-button green" onclick="addKeyword('soda')">soda</button>
+                <button class="keyword-button green" onclick="addKeyword('sweets')">sweets</button>
+                <button class="keyword-button green" onclick="addKeyword('ae')">ae</button>
+
+            </div>
         </div>
+
+        <div class="button-group">
+            <h2>Negative Wörter</h2>
+            <div class="button-container">
+                <button class="keyword-button red" onclick="addKeyword('hilfe')">hilfe</button>
+                <button class="keyword-button red" onclick="addKeyword('angst')">angst</button>
+                <button class="keyword-button red" onclick="addKeyword('trigger')">trigger</button>
+                <button class="keyword-button red" onclick="addKeyword('trauma')">trauma</button>
+                <button class="keyword-button red" onclick="addKeyword('panik attacke')">panik attacke</button>
+                <button class="keyword-button red" onclick="addKeyword('schmerzen')">schmerzen</button>
+                <button class="keyword-button red" onclick="addKeyword('traurig')">traurig</button>
+                <button class="keyword-button red" onclick="addKeyword('übel')">übel</button>
+                <button class="keyword-button red" onclick="addKeyword('kopfweh')">kopfweh</button>
+                <button class="keyword-button red" onclick="addKeyword('schwindel')">schwindel</button>
+                <button class="keyword-button red" onclick="addKeyword('wütend')">wütend</button>
+                <button class="keyword-button red" onclick="addKeyword('frustriert')">frustriert</button>
+                <button class="keyword-button red" onclick="addKeyword('verwirrung')">verwirrung</button>
+                <button class="keyword-button red" onclick="addKeyword('weinen')">weinen</button>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <h2>Abkürzungen</h2>
+            <div class="button-container">
+                <button class="keyword-button yellow" onclick="addKeyword('vl')">vl</button>
+                <button class="keyword-button yellow" onclick="addKeyword('ca')">ca</button>
+                <button class="keyword-button yellow" onclick="addKeyword('eig')">eig</button>
+                <button class="keyword-button yellow" onclick="addKeyword('idk')">idk</button>
+                <button class="keyword-button yellow" onclick="addKeyword('ptbs')">ptbs</button>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <h2>Aktivitäten</h2>
+            <div class="button-container">
+                <button class="keyword-button purple" onclick="addKeyword('betti')">betti</button>
+                <button class="keyword-button purple" onclick="addKeyword('schlafen')">schlafen</button>
+                <button class="keyword-button purple" onclick="addKeyword('essen')">essen</button>
+                <button class="keyword-button purple" onclick="addKeyword('sprechen')">sprechen</button>
+                <button class="keyword-button purple" onclick="addKeyword('trinken')">trinken</button>
+                <button class="keyword-button purple" onclick="addKeyword('streicheln')">streicheln</button>
+                <button class="keyword-button purple" onclick="addKeyword('halten')">halten</button>
+                <button class="keyword-button purple" onclick="addKeyword('kleidung')">kleidung</button>
+                <button class="keyword-button purple" onclick="addKeyword('ausziehen')">ausziehen</button>
+                <button class="keyword-button purple" onclick="addKeyword('schreiben')">schreiben</button>
+                <button class="keyword-button purple" onclick="addKeyword('spazieren')">spazieren</button>
+                <button class="keyword-button purple" onclick="addKeyword('atmen')">atmen</button>
+                <button class="keyword-button purple" onclick="addKeyword('lesen')">lesen</button>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <h2>Beschreibungen</h2>
+            <div class="button-container">
+                <button class="keyword-button orange" onclick="addKeyword('müde')">müde</button>
+                <button class="keyword-button orange" onclick="addKeyword('wach')">wach</button>
+                <button class="keyword-button orange" onclick="addKeyword('nervös')">nervös</button>
+                <button class="keyword-button orange" onclick="addKeyword('heiß')">heiß</button>
+                <button class="keyword-button orange" onclick="addKeyword('kalt')">kalt</button>
+                <button class="keyword-button orange" onclick="addKeyword('hunger')">hunger</button>
+                <button class="keyword-button orange" onclick="addKeyword('kopf')">kopf</button>
+                <button class="keyword-button orange" onclick="addKeyword('arm')">arm</button>
+                <button class="keyword-button orange" onclick="addKeyword('hand')">hand</button>
+                <button class="keyword-button orange" onclick="addKeyword('bein')">bein</button>
+                <button class="keyword-button orange" onclick="addKeyword('fuß')">fuß</button>
+                <button class="keyword-button orange" onclick="addKeyword('rücken')">rücken</button>
+                <button class="keyword-button orange" onclick="addKeyword('bauch')">bauch</button>
+                <button class="keyword-button orange" onclick="addKeyword('hals')">hals</button>
+                <button class="keyword-button orange" onclick="addKeyword('oben')">oben</button>
+                <button class="keyword-button orange" onclick="addKeyword('unten')">unten</button>
+                <button class="keyword-button orange" onclick="addKeyword('links')">links</button>
+                <button class="keyword-button orange" onclick="addKeyword('rechts')">rechts</button>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <h2>Restliche Wörter</h2>
+            <div class="button-container">
+                <button class="keyword-button blue" onclick="addKeyword('ich')">ich</button>
+                <button class="keyword-button blue" onclick="addKeyword('du')">du</button>
+                <button class="keyword-button blue" onclick="addKeyword('ja')">ja</button>
+                <button class="keyword-button blue" onclick="addKeyword('nein')">nein</button>
+                <button class="keyword-button blue" onclick="addKeyword('nicht')">nicht</button>
+                <button class="keyword-button blue" onclick="addKeyword('handy')">handy</button>
+                <button class="keyword-button blue" onclick="addKeyword('ladekabel')">ladekabel</button>
+                <button class="keyword-button blue" onclick="addKeyword('musik')">musik</button>
+                <button class="keyword-button blue" onclick="addKeyword('youtube')">youtube</button>
+                <button class="keyword-button blue" onclick="addKeyword('fernseher')">fernseher</button>
+                <button class="keyword-button blue" onclick="addKeyword('heim')">heim</button>
+            </div>
+        </div>
+
         <textarea id="textInput" placeholder="Schreibe hier..."></textarea>
     </div>
     <script>
